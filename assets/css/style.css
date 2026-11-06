@@ -22,7 +22,7 @@ body {
 
 .dark-mode {
   background-color: #1a1a1a;
-  color: hsl(0, 4%, 16%);
+  color: #fafafa;
 }
 
 img {
@@ -52,7 +52,6 @@ header {
 
   &.scrolled {
     background-color: hsl(150, 60%, 30%);
-    border-bottom-color: hsl(150, 60%, 25%);
     border-bottom: 1px solid #fff;
   }
 
@@ -153,7 +152,7 @@ header {
           align-items: center;
           font-weight: 600;
           cursor: pointer;
-          transition: backround-color 0.2s ease-out,color 0.2s ease-out;
+          transition: background-color 0.2s ease-out, color 0.2s ease-out;
 
           .scrolled & {
             background-color: hsl(150, 60%, 30%);
@@ -255,6 +254,25 @@ header {
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
 
+      .dot-icon {
+        border: 4px solid hsl(150, 60%, 85%);
+        ;
+        width: 100px;
+        height: 100px;
+        background-color: hsl(150, 60%, 30%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+
+        p {
+          color: #fafafa;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+
 
 
       &:hover {
@@ -300,24 +318,7 @@ header {
         background-color: #fafafa;
 
 
-        .dot-icon {
-          border: 4px solid hsl(150, 60%, 85%);
-          ;
-          width: 100px;
-          height: 100px;
-          background-color: hsl(150, 60%, 30%);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-top: 30px;
 
-          p {
-            color: #fafafa;
-            font-size: 2rem;
-            font-weight: 600;
-          }
-        }
 
         p {
           text-align: center;
@@ -360,7 +361,57 @@ header {
     }
 
     &.About-us {
-      height: 40vh;
+      padding-bottom: 3rem;
+
+      .carousel {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: 500px;
+
+
+        .card {
+          width: 30%;
+          position: absolute;
+
+          right: 0;
+          margin: 0;
+          opacity: 0%;
+          animation: cardCarousel 15s linear infinite;
+
+          &:nth-child(2) {
+            animation-delay: 5s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 10s;
+          }
+
+
+
+          blockquote {
+            margin: 1rem 0;
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            font-size: 0.9rem;
+          }
+
+          .author {
+            text-align: center;
+            margin: 0;
+            font-size: 0.85rem;
+            color: #888;
+
+            strong {
+              color: #1a1a1a;
+            }
+          }
+
+
+
+        }
+      }
     }
 
   }
@@ -511,5 +562,26 @@ footer {
   .container section.our-works .content-container .card,
   .container section.services .content-container .card {
     flex: 1 1 25%;
+  }
+}
+
+/* ANIMAZIONI */
+@keyframes cardCarousel {
+  0% {
+    opacity: 0;
+    right: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    right: 100%;
   }
 }
