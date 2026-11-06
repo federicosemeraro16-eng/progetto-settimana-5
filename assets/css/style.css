@@ -199,6 +199,7 @@ header {
     color: #fafafa;
     justify-content: center;
     align-items: center;
+    animation: heroFade 1.2s ease-out;
 
     .hero-container {
       width: 80%;
@@ -206,6 +207,7 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      animation: textDown 1.2s ease-out 0.4s backwards;
 
     }
 
@@ -314,8 +316,12 @@ header {
     &.team {
       padding-bottom: 3rem;
 
+
       .card {
         background-color: #fafafa;
+
+
+
 
 
 
@@ -370,6 +376,12 @@ header {
         height: 500px;
 
 
+        &:hover .card {
+
+          animation-play-state: paused;
+          animation-delay: 0;
+        }
+
         .card {
           width: 30%;
           max-width: 500px;
@@ -387,6 +399,10 @@ header {
           &:nth-child(3) {
             animation-delay: 10s;
           }
+
+
+
+
 
 
 
@@ -429,6 +445,93 @@ header {
     width: 100%;
   }
 
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 20000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  &.open {
+    display: flex;
+    animation: overlay-in 0.3s ease-out;
+  }
+  .modal {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fafafa;
+    padding: 2rem;
+    border-radius: 8px;
+    animation: modal-in 0.3s ease-out;
+
+    h2 {
+      color: hsl(150, 60%, 30%);
+      margin-top: 0;
+      margin-bottom: 0.3rem;
+    }
+
+    .modal-subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0 0 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.8rem;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font: inherit;
+      transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+
+      &:focus {
+        outline: none;
+        border-color: hsl(150, 60%, 30%);
+        box-shadow: 0 0 0 1px hsl(150, 60%, 30%);
+      }
+    }
+
+    button[type="submit"] {
+      align-self: flex-start;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      background-color: hsl(150, 60%, 30%);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border: none;
+      background: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
 }
 
 footer {
@@ -585,4 +688,36 @@ footer {
     opacity: 0;
     right: 100%;
   }
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes textDown {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

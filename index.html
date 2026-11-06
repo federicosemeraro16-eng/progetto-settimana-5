@@ -45,7 +45,7 @@
       <div class="hero-container">
         <h2>Trasformiamo idee in design</h2>
         <p>Siamo uno studio creativo.Identità visiva,web e motion graphic per chi vuole farsi notare.</p>
-        <button type="button">Richiedi Preventivo</button>
+        <button type="button" id="ask-Info-Btn">Richiedi Preventivo</button>
       </div>
     </section>
 
@@ -262,6 +262,43 @@
     </div>
     <p>&copy; 2026 Bloom</p>
   </footer>
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <button type="button" id="close-modal" aria-label="Chiudi">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+
+      <h2>Richiedi un preventivo</h2>
+
+      <form id="myForm">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="services">Servizio</label>
+        <select id="services" name="services" required>
+          <option value="" selected disabled>
+            Scegli un servizio
+          </option>
+          <option value="Identity">
+            Identità visiva
+          </option>
+          <option value="web-design">
+            Web design
+          </option>
+          <option value="motion-graphic">
+            Motion graphic </option>
+        </select>
+
+        <label for="message">Messaggio</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Invia richiesta</button>
+      </form>
+    </div>
+  </div>
 
 </body>
 
