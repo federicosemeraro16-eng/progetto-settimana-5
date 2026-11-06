@@ -185,17 +185,22 @@ header {
 
     }
 
+    .card{
+      display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        justify-content: center;
+
+    }
+
     &.services {
       display: flex;
       flex-direction: column;
       align-items: center;
 
       .card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-
+      
         i {
           color: hsl(150, 60%, 30%);
           margin-top: 50px;
@@ -223,12 +228,7 @@ header {
 
       .card {
         background-color: #fafafa;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        width: 90%;
+        
 
         .dot-icon {
           border: 4px solid hsl(150, 60%, 85%);
@@ -356,6 +356,9 @@ footer {
       i {
         padding-top: 1rem;
         color: hsl(150, 60%, 30%);
+        transition: transform 0.2s ease-out;
+
+
       }
     }
 
@@ -379,7 +382,7 @@ footer {
       flex: 1;
 
       li {
-        
+
         background-color: hsl(0, 4%, 16%);
         border: none;
         padding: 1em;
@@ -389,8 +392,17 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: transform 0.2s ease-out;
+
+        &:hover {
+          transform: scale(1.2);
+          background-color: hsl(150, 60%, 30%);
+
+        }
 
       }
+
+
     }
 
   }
@@ -399,7 +411,7 @@ footer {
     color: hsl(0, 0%, 67%);
     margin: 0;
     font-size: 0.8rem;
-    
+
   }
 
 }
@@ -430,6 +442,7 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
+
   .container section.team .content-container .card,
   .container section.our-works .content-container .card,
   .container section.services .content-container .card {
