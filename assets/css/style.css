@@ -1,7 +1,7 @@
 /* Reset della pagina */
 *,
 *::after,
-**::before {
+*::before {
   box-sizing: border-box;
 }
 
@@ -34,11 +34,10 @@ a {
 
 
 
-
 /* HEADER */
 
 header {
-  height: 15dvh;
+
   border-bottom: 2px solid #eee;
 
   .header-container {
@@ -68,6 +67,7 @@ header {
     nav ul {
       display: flex;
       list-style-type: none;
+      padding: 0;
       gap: 0.6rem;
       margin: 0;
       align-items: center;
@@ -85,7 +85,7 @@ header {
           width: 44px;
           display: flex;
           justify-content: center;
-          padding: 15px;
+          align-items: center;
           font-weight: 600;
         }
       }
@@ -100,8 +100,9 @@ header {
 
 }
 
-.container{
-  .hero{
+.container {
+
+  .hero {
     display: flex;
     flex-direction: column;
     background-color: hsl(150, 60%, 30%);
@@ -109,8 +110,8 @@ header {
     color: #fafafa;
     justify-content: center;
     align-items: center;
-    
-    .hero-container{
+
+    .hero-container {
       width: 80%;
       display: flex;
       flex-direction: column;
@@ -119,15 +120,17 @@ header {
 
     }
 
-    h2{
+    h2 {
       font-size: 2rem;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
     }
-    p{
+
+    p {
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      text-align: center;
     }
 
-    button{
+    button {
       cursor: pointer;
       border: 1px solid rgba(0, 0, 0, 0.3);
       padding: 1em;
@@ -138,4 +141,55 @@ header {
       border-radius: 30px;
     }
   }
+
+
+  section {
+
+    &.services,
+    &.team {
+      
+      height: 80vh;
+    }
+    &.team{
+    
+    background-color: hsl(147, 67%, 89%);}
+
+    &:not(.hero) h2 {
+      
+      color: hsl(150, 60%, 30%);
+      text-align: center;
+      padding-top: 2.7rem;
+    }
+
+    &.About-us{
+      height: 40vh;
+  }
+
+}
+
+
+
+
+
+
+
+
+.card {
+  width: 93%;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  margin-top: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+
+
+  .img-container {
+    width: 100%;
+  }
+}
+
+
+
+
 }
