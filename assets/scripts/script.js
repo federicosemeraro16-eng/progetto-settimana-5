@@ -7,6 +7,7 @@ const overlay = document.querySelector('#overlay');
 const openModalBtn = document.querySelector('#ask-Info-Btn');
 const myForm = document.querySelector('#myForm');
 const closeModalBtn = document.querySelector('#close-modal')
+const successMsg = document.querySelector('.form-success')
 
 headerBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -26,6 +27,7 @@ window.addEventListener('scroll', (e) => {
 })
 
 openModalBtn.addEventListener('click', (e) => {
+  successMsg.classList.remove('show');
   myForm.reset()
   overlay.classList.add('open');
 })
@@ -37,3 +39,9 @@ closeModalBtn.addEventListener('click', (e) => {
 
 })
 
+myForm.addEventListener('submit',(e) => {
+  e.preventDefault();
+  successMsg.classList.add('show');
+  form.reset();
+
+})

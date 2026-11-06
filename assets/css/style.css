@@ -54,6 +54,10 @@ header {
     background-color: hsl(150, 60%, 30%);
     border-bottom: 1px solid #fff;
   }
+   &.dark-mode.scrolled {
+    background-color: hsl(150, 60%, 30%);
+    border-bottom: 1px solid #fff;
+  }
 
 
   .header-container {
@@ -233,7 +237,7 @@ header {
 
       @media screen and (min-width:577px) {
         width: 20%;
-        
+
       }
     }
   }
@@ -283,8 +287,8 @@ header {
 
 
       &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        transform: translateY(-10px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
       }
 
     }
@@ -466,6 +470,7 @@ header {
     display: flex;
     animation: overlay-in 0.3s ease-out;
   }
+
   .modal {
     position: relative;
     width: 100%;
@@ -474,6 +479,10 @@ header {
     padding: 2rem;
     border-radius: 8px;
     animation: modal-in 0.3s ease-out;
+
+    p {
+      color: #848486;
+    }
 
     h2 {
       color: hsl(150, 60%, 30%);
@@ -535,6 +544,24 @@ header {
       background: none;
       font-size: 1.3rem;
       cursor: pointer;
+    }
+
+    .form-success {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 1rem 0 0;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      background-color: hsl(147, 68%, 89%);
+      border: 1px solid hsl(150, 50%, 80%);
+      color: hsl(150, 60%, 25%);
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      &.show {
+        display: flex;
+      }
     }
   }
 }
@@ -718,11 +745,23 @@ footer {
 }
 
 @keyframes overlay-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes modal-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
