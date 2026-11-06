@@ -48,6 +48,14 @@ header {
   top: 0;
   background-color: #fafafa;
   z-index: 10000;
+  transition: background-color 0.3s ease-out;
+
+  &.scrolled {
+    background-color: hsl(150, 60%, 30%);
+    border-bottom-color: hsl(150, 60%, 25%);
+    border-bottom: 1px solid #fff;
+  }
+
 
   .header-container {
     display: flex;
@@ -69,12 +77,20 @@ header {
       i {
         color: hsl(150, 60%, 30%);
 
+        .scrolled & {
+          color: #fff;
+        }
+
       }
 
       h1 {
 
         color: hsl(150, 60%, 30%);
         margin: 0;
+
+        .scrolled & {
+          color: #fff;
+        }
 
         @media screen and (min-width:577px) {
           font-size: 1rem;
@@ -100,6 +116,10 @@ header {
         padding: 0.8rem;
         border-radius: 6px;
 
+        .scrolled & {
+          color: #fff;
+        }
+
         @media screen and (min-width:577px) {
           font-size: 0.8rem;
 
@@ -108,6 +128,10 @@ header {
         &:not(:last-child):hover {
           background-color: hsl(150, 60%, 95%);
           cursor: pointer;
+
+          .scrolled & {
+            background-color: rgba(255, 255, 255, 0.15);
+          }
 
           .dark-mode & {
             background-color: hsl(0, 4%, 16%);
@@ -129,6 +153,14 @@ header {
           align-items: center;
           font-weight: 600;
           cursor: pointer;
+          transition: backround-color 0.2s ease-out,color 0.2s ease-out;
+
+          .scrolled & {
+            background-color: hsl(150, 60%, 30%);
+            color: #fff;
+          }
+
+
 
           &:hover {
             background-color: hsl(150, 60%, 30%);
@@ -137,6 +169,12 @@ header {
               background-color: hsl(0, 4%, 16%);
               color: #fafafa;
 
+            }
+
+            .scrolled & {
+              background-color: hsl(150, 60%, 25%);
+              border-color: rgba(255, 255, 255, 0.6);
+              color: #fff;
             }
           }
         }

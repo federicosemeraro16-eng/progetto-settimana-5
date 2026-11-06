@@ -14,4 +14,9 @@ headerBtn.addEventListener('click', (e) => {
 
 })
 
+window.addEventListener('scroll',(e)=>{
+  e.preventDefault();
+  header.classList.toggle('scrolled', window.scrollY > 250);
+})
+
 
