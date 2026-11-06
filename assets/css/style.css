@@ -230,6 +230,11 @@ header {
       color: hsl(150, 60%, 30%);
       font-weight: 600;
       border-radius: 30px;
+
+      @media screen and (min-width:577px) {
+        width: 20%;
+        
+      }
     }
   }
 
