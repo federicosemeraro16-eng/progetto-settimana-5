@@ -372,6 +372,7 @@ header {
 
         .card {
           width: 30%;
+          max-width: 500px;
           position: absolute;
 
           right: 0;
